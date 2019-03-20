@@ -3,14 +3,10 @@ import "fmt"
 
 func fibonacci() func() int {
 	a, b := 0, 1
-	count := 0
 	return func() int {
-		count++
-		if count == 1 {
-			return 0;
-		}
+		temp := a;
 		a, b = b, a+b
-		return a
+		return temp
 	}
 }
 func main() {
